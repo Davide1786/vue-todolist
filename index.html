@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+
+<head>
    <meta charset="UTF-8" />
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
    <link rel="stylesheet" href="css/style.css" />
 
    <title>Titolo Documento</title>
- </head>
+</head>
 
- <body>
-    <div id="root" class="container">
+<body>
+   <!-- <div id="root" class="container">
        <div class="logo">
          <img src="https://www.boolean.careers/images/misc/logo.png" alt="">
        </div>
@@ -24,12 +27,32 @@
              <li v-for="(promemoria, index) in listaPromemoria"> {{promemoria}} <i @click="removeProme(index)" class="fas fa-times"></i></li>
           </ul>
        </div>
-    </div>
-   
+    </div> -->
+
+   <!-- ============================================ versione array di oggetti -->
+
+
+   <div id="root" class="container">
+      <div class="logo">
+         <img src="https://www.boolean.careers/images/misc/logo.png" alt="">
+      </div>
+      <div class="newPromemoria">
+         <input class="add" type="text" placeholder="Aggiungi promemoria" v-model="add" v-on:keyup.enter="onEnter">
+         <button class="btn" @click="addPromemoria()">Aggiungi</button>
+      </div>
+      <div class="promemoria">
+         <ul v-if="listaPromemoria.length > 0">
+            <li @click="cambioColore(promemoria)" :class="promemoria.done ? 'green' : 'red'"
+               v-for="(promemoria, index) in listaPromemoria"> {{ promemoria.titolo }} <i @click="removeProme(index)"
+                  class="fas fa-times"></i></li>
+         </ul>
+         <h2 v-else>Non ci sono promemoria al momento</h2>
+      </div>
+   </div>
+
 
    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-   <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
-   
    <script src="js/main.js"></script>
- </body>
+</body>
+
 </html>
