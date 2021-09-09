@@ -1,0 +1,63 @@
+*{
+   margin: 0; 
+   padding: 0; 
+   box-sizing: border-box; 
+}
+
+.container {
+   width: 80%;
+   height: 100vh;
+   margin: 0 auto;
+}
+
+.logo {
+   width: 30%;
+   margin: 0 auto;
+   padding: 20px;
+}
+
+.logo img {
+   width: 100%;
+}
+
+.newPromemoria {
+   margin: 80px auto;
+   text-align: center;
+}
+
+.add {
+   width: 30%;
+   height: 40px;
+   border-radius: 8px;
+}
+
+.btn {
+   width: 10%;
+   height: 40px;
+   border-radius: 8px;
+}
+
+.promemoria {
+   margin: 0 auto;
+   padding: 20px;
+   border-radius: 8px;
+   background-color: rgb(238, 238, 238);
+}
+
+li {
+   list-style-type: none;
+   border-bottom: 1px solid lightgray;
+   padding: 10px 10px;
+}
+
+.fa-times {
+   float: right;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+    padding: 5px;
+}
